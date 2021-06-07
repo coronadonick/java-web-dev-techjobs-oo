@@ -24,7 +24,7 @@ public class JobTest {
     @Test
     public void testSettingJobId() {
         assertEquals(test1.getId() + 1, test2.getId());
-    }
+    } //test1 ID: 1+1=2 assertEquals test2 ID: 2
 
     @Test
     public void testJobConstructorSetsAllFields() {
@@ -46,12 +46,12 @@ public class JobTest {
     @Test
     public void testJobsForEquality() {
         assertFalse(test1.equals(test2));
-    }
+    } //test1 has an ID of 1 and test2 has an ID of 2 so they are not equal
 
     @Test
     public void testNewLines() {
         Job test3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        ;
+
         int lastIndex = (test3.toString().length() - 1);
 
         assertTrue(test3.toString().charAt(0) == '\n'); //character 0 should be new line
@@ -71,6 +71,7 @@ public class JobTest {
         assertEquals("Position Type: " + test3.getPositionType().getValue(), lines[4]);
         assertEquals("Core Competency: " + test3.getCoreCompetency().getValue(), lines[5]);
     }
+
     @Test
     public void testEmptyField() {
         Job test4 = new Job("Product tester", new Employer(), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
